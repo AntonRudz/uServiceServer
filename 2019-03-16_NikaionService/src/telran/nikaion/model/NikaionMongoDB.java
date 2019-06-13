@@ -1,22 +1,16 @@
 package telran.nikaion.model;
 
-import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import net.bytebuddy.implementation.bytecode.Throw;
 import telran.nikaion.dto.ClientProfileDto;
 import telran.nikaion.dto.NewProviderDto;
 import telran.nikaion.dto.PatternOutputDto;
