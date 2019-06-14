@@ -10,6 +10,7 @@ public class AccountingAuthorization extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable();
 		http.httpBasic();
+		http.cors();
 		http.authorizeRequests().antMatchers(SHOW_CLIENT).hasRole("CLIENT");
 		http.authorizeRequests().antMatchers(CREATE_PROVIDER).hasAnyRole("ADMIN", "CLIENT");
 		http.authorizeRequests().antMatchers(SHOW_PROVIDER).hasRole("PROVIDER");
