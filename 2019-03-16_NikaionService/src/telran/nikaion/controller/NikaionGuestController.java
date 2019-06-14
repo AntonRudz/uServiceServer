@@ -19,7 +19,7 @@ import telran.nikaion.dto.UserDto;
 import telran.nikaion.dto.UserProfileDto;
 import telran.nikaion.model.INikaionCompany;
 	@RestController
-	 @CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "http://localhost:4200")
 public class NikaionGuestController {
 		@Bean
 		PasswordEncoder getPasswordEncoder() {
