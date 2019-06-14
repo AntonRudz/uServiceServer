@@ -16,20 +16,21 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @EnableWebMvc
 public class WebSecurityConfig extends WebMvcConfigurerAdapter {
 	@Override
-	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/api/**").allowedOrigins("https://localhost:4200").allowedMethods("PUT", "DELETE")
-				.allowedHeaders("header1", "header2", "header3").exposedHeaders("header1", "header2")
-				.allowCredentials(false).maxAge(3600);
-	}
+	 public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+           .allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATCH");
+    }
 
-	@Bean
-	CorsConfigurationSource corsConfigurationSource() {
-		CorsConfiguration configuration = new CorsConfiguration();
-		configuration.setAllowedOrigins(Arrays.asList("https://localhost:4200"));
-		configuration.setAllowedMethods(Arrays.asList("GET", "POST"));
-		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-		source.registerCorsConfiguration("/**", configuration);
-		return source;
-	}
+	 @Bean
+	    public CorsConfigurationSource corsConfigurationSource() {
+	        final CorsConfiguration configuration = new CorsConfiguration();
+	        configuration.setAllowedOrigins(Arrays.asList("*"));
+	        configuration.setAllowedMethods(Arrays.asList("HEAD", "GET", "POST", "PUT", "DELETE", "PATCH"));
+	        configuration.setAllowCredentials(true);
+	        configuration.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control", "Content-Type"));
+	        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+	        source.registerCorsConfiguration("/**", configuration);
+	        return source;
+	    }
 
 }
