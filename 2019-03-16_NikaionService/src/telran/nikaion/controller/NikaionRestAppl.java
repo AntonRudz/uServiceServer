@@ -83,7 +83,6 @@ public class NikaionRestAppl {
 
 	public static void main(String[] args) {
 		SpringApplication.run(NikaionRestAppl.class, args);
-
 	}
 
 }
