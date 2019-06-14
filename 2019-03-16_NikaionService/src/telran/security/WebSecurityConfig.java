@@ -17,9 +17,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class WebSecurityConfig extends WebMvcConfigurerAdapter {
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/api/**").allowedOrigins("your url or just add * ").allowedMethods("PUT", "DELETE")
+		registry.addMapping("/api/**").allowedOrigins("https://localhost:4200").allowedMethods("PUT", "DELETE")
 				.allowedHeaders("header1", "header2", "header3").exposedHeaders("header1", "header2")
-				.allowCredentials(false).maxAge(3600);
+				.allowCredentials(false).maxAge(4600);
 	}
 
 	@Bean
