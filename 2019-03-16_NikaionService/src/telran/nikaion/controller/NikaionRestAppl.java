@@ -28,6 +28,7 @@ import telran.nikaion.model.INikaionCompany;
 @ComponentScan({ "telran.nikaion.model", "telran.security", "telran.nikaion.controller" })
 @EnableMongoRepositories("telran.nikaion.mongodb.repo")
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class NikaionRestAppl {
 	@Bean
 	PasswordEncoder getPasswordEncoder() {
