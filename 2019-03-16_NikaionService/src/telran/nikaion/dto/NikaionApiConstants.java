@@ -32,6 +32,6 @@ public interface NikaionApiConstants {
 	String SHOW_SCHEDULE="/provider/records"; /*PROVIDER*/
 	String UPDATE_SHEDULE_PATTERN="/provider/pattern"; /*PROVIDER*/
 	String CHANGE_ACTIVITY="/provider/activity"; /*PROVIDER*/
-	
+	String SHOW_ALL_SERVICES_P="/provider/services";
 	String UPDATE_RECORD="/client/records/{recordId}"; /*CLIENT*/
 }
