@@ -41,7 +41,8 @@ public class NikaionGuestController {
 		
 		@RequestMapping(value=NikaionApiConstants.SHOW_PROVIDER_BY_ID)
 		ProviderProfileDto showProviderById(@PathVariable(name="providerId") String providerId) {
-				return company.getProviderById(providerId);
+			System.out.println("providerId"+providerId);	
+			return company.getProviderById(providerId);
 		}
 		@RequestMapping(value=NikaionApiConstants.SHOW_ALL_SERVICES)
 		List <ServiceDto> showAllServices(){

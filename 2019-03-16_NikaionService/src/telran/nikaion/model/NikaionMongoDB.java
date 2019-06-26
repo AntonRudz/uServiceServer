@@ -113,7 +113,7 @@ public class NikaionMongoDB implements INikaionCompany, IAccounts {
 
 	@Override
 	public ProviderProfileDto getProvider(String id) {
-
+		System.out.println(id);
 		return providers.findById(id).orElseThrow(()->new NikaionNotFoundExeption(ServiceReturnCode.PROVIDER_NOT_FOUND)).getProvider();
 	}
 
@@ -124,8 +124,11 @@ public class NikaionMongoDB implements INikaionCompany, IAccounts {
 
 	@Override
 	public ProviderProfileDto getProviderById(String id) {
-		return providers.findById(id)
+		System.out.println(id);
+		ProviderProfileDto provider = providers.findById(id)
 				.orElseThrow(() -> new NikaionNotFoundExeption(ServiceReturnCode.PROVIDER_NOT_FOUND)).getProvider();
+		System.out.println(provider.getFirstName());
+		return provider;
 	}
 
 	@Override

@@ -32,6 +32,7 @@ public class NikaionClientController {
 
 	@RequestMapping(value = NikaionApiConstants.SHOW_CLIENT)
 	UserProfileDto showUser(Principal principal) {
+		System.out.println(principal.getName());
 		return company.getUser(principal.getName());
 
 	}
@@ -53,6 +54,7 @@ public class NikaionClientController {
 
 	@RequestMapping(value = NikaionApiConstants.SHOW_RECORD)
 	RecordDto showRecord(@PathVariable(name = "recordId") String recordId, Principal principal) {
+		System.out.println(recordId);
 		return company.showRecord(recordId, principal.getName());
 	}
 

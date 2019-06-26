@@ -1,14 +1,15 @@
 package telran.nikaion.dto;
-
+import java.io.Serializable;
 import java.util.List;
 
-public class ProviderProfileDto {
+@SuppressWarnings("serial")
+public class ProviderProfileDto implements Serializable{
 	private CommunicationsDto communications;
 	private String firstName;
 	private String lastName;
 	private String[] professions;
 	private int rating;
-	List<ServiceDto> services;
+	private List<ServiceDto> services;
 
 	public ProviderProfileDto(CommunicationsDto communications, String firstName, String lastName, String[] professions,
 			int rating, List<ServiceDto> services) {

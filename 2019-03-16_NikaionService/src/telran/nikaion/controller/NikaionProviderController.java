@@ -31,6 +31,7 @@ public class NikaionProviderController {
 
 	@RequestMapping(value = NikaionApiConstants.SHOW_PROVIDER)
 	ProviderProfileDto showProvider(Principal principal) {
+		//System.out.println(principal.getName());
 		return company.getProvider(principal.getName());
 	}
 

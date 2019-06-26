@@ -1,8 +1,11 @@
 package telran.nikaion.dto;
 
-public class NewProviderDto {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class NewProviderDto implements Serializable{
 	private String [] professions;
-	ServiceInputDto [] services;
+	private ServiceInputDto [] services;
 	public NewProviderDto() {
 	}
 	public NewProviderDto(String[] professions, ServiceInputDto[] services) {
