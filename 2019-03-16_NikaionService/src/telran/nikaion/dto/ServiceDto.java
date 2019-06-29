@@ -1,6 +1,9 @@
 package telran.nikaion.dto;
 
-public class ServiceDto {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class ServiceDto implements Serializable{
 	private String id;
 	private String name;
 	private double price;

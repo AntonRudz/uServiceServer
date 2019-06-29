@@ -11,9 +11,9 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-@SuppressWarnings("deprecation")
-@Configuration
-@EnableWebMvc
+//@SuppressWarnings("deprecation")
+//@Configuration
+//@EnableWebMvc
 public class WebSecurityConfig extends WebMvcConfigurerAdapter {
 	@Override
 	 public void addCorsMappings(CorsRegistry registry) {
@@ -21,7 +21,7 @@ public class WebSecurityConfig extends WebMvcConfigurerAdapter {
            .allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATCH");
     }
 
-	 @Bean
+//	 @Bean
 	    public CorsConfigurationSource corsConfigurationSource() {
 	        final CorsConfiguration configuration = new CorsConfiguration();
 	        configuration.setAllowedOrigins(Arrays.asList("*"));

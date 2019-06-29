@@ -1,6 +1,9 @@
 package telran.nikaion.dto;
 
-public class CommunicationsDto {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class CommunicationsDto implements Serializable{
 	private AddressDto address;
 	private String [] emails;
 	private String [] phones;

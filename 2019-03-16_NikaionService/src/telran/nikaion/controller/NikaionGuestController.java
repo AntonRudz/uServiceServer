@@ -7,12 +7,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import telran.nikaion.dto.ClientProfileDto;
 import telran.nikaion.dto.NikaionApiConstants;
 import telran.nikaion.dto.ProviderProfileDto;
 import telran.nikaion.dto.ServiceDto;
@@ -43,8 +44,9 @@ public class NikaionGuestController {
 		@RequestMapping(value=NikaionApiConstants.SHOW_PROVIDER_BY_ID)
 		ProviderProfileDto showProviderById(@PathVariable(name="providerId") String providerId) {
 			System.out.println("providerId"+providerId);	
-			return company.getProviderById(providerId);
+			return company.getProvider(providerId);
 		}
+		
 		@RequestMapping(value=NikaionApiConstants.SHOW_ALL_SERVICES)
 		List <ServiceDto> showAllServices(){
 			return company.showAllServices();

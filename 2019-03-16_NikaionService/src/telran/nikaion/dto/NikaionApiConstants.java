@@ -6,7 +6,7 @@ public interface NikaionApiConstants {
 	String CREATE_PROVIDER = "/client"; /* create new provider CLIENT */
 	String SHOW_PROVIDER = "/provider"; /* show_provider CLIENT */
 	String SHOW_PROVIDERS = "/main/providers"; /* show providers GUEST */
-	String SHOW_PROVIDER_BY_ID = "/main/providers/{providerId}"; /* show provider by id GUEST */
+	String SHOW_PROVIDER_BY_ID = "/main/providers/{providerId:.+}"; /* show provider by id GUEST */
 	String UPDATE_CLIENT = "/client"; /* CLIENT */
 	String SHOW_ALL_SERVICES = "/main/services"; /* GUEST */
 	String SHOW_SERVICE_BY_ID = "/main/services/{serviceId}"; /* GUEST */
