@@ -88,9 +88,9 @@ public class NikaionMongoDB implements INikaionCompany, IAccounts {
 	}
 
 	@Override
-	public UserProfileDto getUser(String id) {
+	public ClientProfileDto getClient(String id) {
 		return users.findById(id).orElseThrow(() -> new NikaionNotFoundExeption(ServiceReturnCode.USER_NOT_FOUND))
-				.getUser();
+				.getClient();
 	}
 
 	@Override

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import telran.nikaion.dto.ClientProfileDto;
 import telran.nikaion.dto.NewProviderDto;
 import telran.nikaion.dto.NikaionApiConstants;
 import telran.nikaion.dto.ProviderProfileDto;
@@ -31,9 +32,9 @@ public class NikaionClientController {
 	INikaionCompany company;
 
 	@RequestMapping(value = NikaionApiConstants.SHOW_CLIENT)
-	UserProfileDto showUser(Principal principal) {
+	ClientProfileDto showUser(Principal principal) {
 		System.out.println(principal.getName());
-		return company.getUser(principal.getName());
+		return company.getClient(principal.getName());
 
 	}
 

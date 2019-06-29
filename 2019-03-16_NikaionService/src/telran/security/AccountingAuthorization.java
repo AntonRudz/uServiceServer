@@ -30,6 +30,8 @@ public class AccountingAuthorization extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers(SHOW_PROVIDER_FREE_TIME_BY_ID).hasRole("CLIENT");
 		http.authorizeRequests().antMatchers(REMOVE_USER).hasRole("ADMIN");
 		
+	
+		
 		http.authorizeRequests().antMatchers(SHOW_RECORD_P).hasRole("PROVIDER");
 		http.authorizeRequests().antMatchers(UPDATE_RECORD).hasRole("CLIENT");
 		http.authorizeRequests().antMatchers(SHOW_ALL_CLIENTS).hasRole("ADMIN");

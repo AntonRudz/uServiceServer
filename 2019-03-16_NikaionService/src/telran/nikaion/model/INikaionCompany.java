@@ -33,7 +33,7 @@ public interface INikaionCompany {
 
 	ProviderProfileDto addProvider(NewProviderDto provider, String idUser); /* CLIENT */
 
-	UserProfileDto getUser(String id); /* CLIENT */
+	ClientProfileDto getClient(String id); /* CLIENT */
 
 	ProviderProfileDto getProvider(String id); /* CLIENT */
 
