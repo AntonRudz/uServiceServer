@@ -60,7 +60,7 @@ public class UserCrud {
 	}
 	public UserProfileDto getUser() {
 		CommunicationsDto resCommunications= new CommunicationsDto();
-		if(communications==null) {
+		if(communications.getAddress()==null) {
 			resCommunications.setAddress(new AddressDto());
 			String[] phones = new String[1];
 			phones[0]=email;
