@@ -41,7 +41,11 @@ public class UserCrud {
 	}
 
 	public UserCrud(UserDto user) {
-		communications=user.getCommunications();
+		if(user.getCommunications()==null) {
+			communications=new Communications();
+		}else {communications=user.getCommunications();
+		}
+		
 		email=user.getEmail();
 		dateBirth=user.getDateBirth();
 		firstName=user.getFirstName();
