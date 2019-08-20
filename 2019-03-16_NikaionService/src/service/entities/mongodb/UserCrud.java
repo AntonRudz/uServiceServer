@@ -59,12 +59,26 @@ public class UserCrud {
 	public UserCrud() {
 	}
 	public UserProfileDto getUser() {
-		AddressDto resAddress=new AddressDto(communications.getAddress().getCity(), communications.getAddress().getDistrict());
-		String[] phones= new String[communications.getPhones().length]; 
-		for(int i=0;i<communications.getPhones().length;i++) {
-			phones[i]=communications.getPhones()[i].getNumber();
+		CommunicationsDto resCommunications= new CommunicationsDto();
+		if(communications==null) {
+			resCommunications.setAddress(new AddressDto());
+			String[] phones = new String[1];
+			phones[0]=email;
+			resCommunications.setEmails(phones);
+			resCommunications.setEmails(new String[0]);
 		}
-			CommunicationsDto resCommunications=new CommunicationsDto(resAddress, communications.getAdditionalEmails(),phones);
+		else {
+			AddressDto resAddress=new AddressDto(communications.getAddress().getCity(), communications.getAddress().getDistrict());
+			String[] phones= new String[communications.getPhones().length]; 
+			for(int i=0;i<communications.getPhones().length;i++) {
+				phones[i]=communications.getPhones()[i].getNumber();
+			}
+			resCommunications.setAddress(resAddress);
+			resCommunications.setEmails(communications.getAdditionalEmails());
+			resCommunications.setPhones(phones);
+		}
+		
+		
 		UserProfileDto res=new UserProfileDto(resCommunications, firstName, lastName, roles);
 		return res;
 	}
